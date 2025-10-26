@@ -48,4 +48,7 @@ public interface TeacherMapper {
 
     @Select("select id,name,gender,age,position_id,title_id,major,email from teacher where id=#{id}")
     TeacherVo getById(Integer id);
+
+    @Select("select name from teacher where party=#{party}")
+    List<String> getListByParty(Integer party);
 }
