@@ -3,7 +3,6 @@ package com.itmo.evaluationsystem.Service.Impl;
 import com.itmo.evaluationsystem.Mapper.TeacherMapper;
 import com.itmo.evaluationsystem.Model.PageResult;
 import com.itmo.evaluationsystem.Model.dto.teacher.TeacherAddRequest;
-import com.itmo.evaluationsystem.Model.dto.teacher.TeacherListGetRequest;
 import com.itmo.evaluationsystem.Model.dto.teacher.TeacherUpdateRequest;
 import com.itmo.evaluationsystem.Model.vo.TeacherVo;
 import com.itmo.evaluationsystem.Service.TeacherService;
@@ -28,15 +27,7 @@ public class TeacherServiceImpl implements TeacherService {
     private final Integer PAGE_SIZE = 10;
 
     @Override
-    public PageResult<TeacherVo> getList(TeacherListGetRequest teacherListGetRequest) {
-        // 参数校验
-        if (teacherListGetRequest == null) {
-            teacherListGetRequest = new TeacherListGetRequest();
-        }
-
-        String name = teacherListGetRequest.getName();
-        Integer page = teacherListGetRequest.getPage();
-
+    public PageResult<TeacherVo> getList(String name, Integer page) {
         // 处理分页参数
         int currentPage = (page == null || page <= 0) ? 1 : page;
         int offset = (currentPage - 1) * PAGE_SIZE;

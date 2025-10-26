@@ -29,7 +29,7 @@
     <!-- 查询课程总数（基于名称搜索条件） -->
     <select id="selectEvaluationCountByName" resultType="java.lang.Long">
         SELECT COUNT(*)
-        FROM course
+        FROM evaluation
         <where>
             <!-- 与列表查询保持相同的搜索条件 -->
             <if test="name != null and name != ''">

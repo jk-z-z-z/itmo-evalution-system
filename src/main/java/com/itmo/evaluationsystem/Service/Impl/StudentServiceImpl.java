@@ -3,7 +3,6 @@ package com.itmo.evaluationsystem.Service.Impl;
 import com.itmo.evaluationsystem.Mapper.StudentMapper;
 import com.itmo.evaluationsystem.Model.PageResult;
 import com.itmo.evaluationsystem.Model.dto.student.StudentAddRequest;
-import com.itmo.evaluationsystem.Model.dto.student.StudentListGetRequest;
 import com.itmo.evaluationsystem.Model.dto.student.StudentUpdateRequest;
 import com.itmo.evaluationsystem.Model.vo.StudentVo;
 import com.itmo.evaluationsystem.Service.StudentService;
@@ -28,15 +27,7 @@ public class StudentServiceImpl implements StudentService {
     private final Integer PAGE_SIZE = 10;
 
     @Override
-    public PageResult<StudentVo> getList(StudentListGetRequest studentListGetRequest) {
-        // 参数校验
-        if (studentListGetRequest == null) {
-            studentListGetRequest = new StudentListGetRequest();
-        }
-
-        String name = studentListGetRequest.getName();
-        Integer page = studentListGetRequest.getPage();
-
+    public PageResult<StudentVo> getList(String name, Integer page) {
         // 处理分页参数
         int currentPage = (page == null || page <= 0) ? 1 : page;
         int offset = (currentPage - 1) * PAGE_SIZE;

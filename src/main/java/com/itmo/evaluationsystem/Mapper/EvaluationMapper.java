@@ -22,7 +22,7 @@ public interface EvaluationMapper {
 
     Long selectEvaluationCountByName(String name);
 
-    @Select("SELECT name,create_date,start_date,end_date,status from evaluation where id=#{id} ")
+    @Select("SELECT id，name,create_date,start_date,end_date,status from evaluation where id=#{id} ")
     EvaluationVo getById(Integer id);
 
     @Update("update evaluation " +

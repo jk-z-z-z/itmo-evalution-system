@@ -3,7 +3,6 @@ package com.itmo.evaluationsystem.Controller;
 import com.itmo.evaluationsystem.Model.PageResult;
 import com.itmo.evaluationsystem.Model.Result;
 import com.itmo.evaluationsystem.Model.dto.evalution.EvaluationAddRequest;
-import com.itmo.evaluationsystem.Model.dto.evalution.EvaluationListGetRequest;
 import com.itmo.evaluationsystem.Model.dto.evalution.EvaluationUpdateRequest;
 import com.itmo.evaluationsystem.Model.vo.EvaluationVo;
 import com.itmo.evaluationsystem.Service.EvaluationService;
@@ -37,10 +36,11 @@ public class EvaluationController {
      * 分页查询
      */
     @GetMapping
-    public Result getList(@RequestBody EvaluationListGetRequest evaluationListGetRequest) {
+    public Result getList(@RequestParam(required = false) String name, 
+                         @RequestParam(defaultValue = "1") Integer page) {
         log.info("EvaluationController:Evaluation:getList");
 
-        PageResult<EvaluationVo> evaluationList=evaluationService.getList(evaluationListGetRequest);
+        PageResult<EvaluationVo> evaluationList = evaluationService.getList(name, page);
 
         return Result.success(evaluationList);
     }

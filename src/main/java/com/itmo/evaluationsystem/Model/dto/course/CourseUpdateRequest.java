@@ -6,7 +6,7 @@ import lombok.Data;
 public class CourseUpdateRequest {
     private Integer id;
     private String name;
-    private String EnglishName;
+    private String englishName;
     private String major;
     private Integer teacherId;
 }

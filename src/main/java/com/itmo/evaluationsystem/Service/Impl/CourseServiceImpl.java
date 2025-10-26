@@ -3,7 +3,6 @@ package com.itmo.evaluationsystem.Service.Impl;
 import com.itmo.evaluationsystem.Mapper.CourseMapper;
 import com.itmo.evaluationsystem.Model.PageResult;
 import com.itmo.evaluationsystem.Model.dto.course.CourseAddRequest;
-import com.itmo.evaluationsystem.Model.dto.course.CourseListGetRequest;
 import com.itmo.evaluationsystem.Model.dto.course.CourseUpdateRequest;
 import com.itmo.evaluationsystem.Model.vo.CourseVo;
 import com.itmo.evaluationsystem.Service.CourseService;
@@ -28,15 +27,7 @@ public class CourseServiceImpl implements CourseService {
     private final Integer PAGE_SIZE = 10;
 
     @Override
-    public PageResult<CourseVo> getList(CourseListGetRequest courseListGetRequest) {
-        // 参数校验
-        if (courseListGetRequest == null) {
-            courseListGetRequest = new CourseListGetRequest();
-        }
-
-        String name = courseListGetRequest.getName();
-        Integer page = courseListGetRequest.getPage();
-
+    public PageResult<CourseVo> getList(String name, Integer page) {
         // 处理分页参数
         int currentPage = (page == null || page <= 0) ? 1 : page;
         int offset = (currentPage - 1) * PAGE_SIZE;

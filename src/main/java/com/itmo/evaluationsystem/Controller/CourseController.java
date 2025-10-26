@@ -1,12 +1,11 @@
 package com.itmo.evaluationsystem.Controller;
 
 import com.itmo.evaluationsystem.Model.PageResult;
-import com.itmo.evaluationsystem.Model.Result;
-import com.itmo.evaluationsystem.Model.dto.course.CourseAddRequest;
-import com.itmo.evaluationsystem.Model.dto.course.CourseListGetRequest;
-import com.itmo.evaluationsystem.Model.dto.course.CourseUpdateRequest;
 import com.itmo.evaluationsystem.Model.vo.CourseVo;
 import com.itmo.evaluationsystem.Service.CourseService;
+import com.itmo.evaluationsystem.Model.Result;
+import com.itmo.evaluationsystem.Model.dto.course.CourseAddRequest;
+import com.itmo.evaluationsystem.Model.dto.course.CourseUpdateRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -36,10 +35,11 @@ public class CourseController {
      * 分页查询
      */
     @GetMapping
-    public Result getList(@RequestBody CourseListGetRequest courseListGetRequest) {
-        log.info("StudentController:Student:getList");
+    public Result getList(@RequestParam(required = false) String name, 
+                         @RequestParam(defaultValue = "1") Integer page) {
+        log.info("CourseController:Course:getList");
 
-        PageResult<CourseVo> courseList=courseService.getList(courseListGetRequest);
+        PageResult<CourseVo> courseList = courseService.getList(name, page);
 
         return Result.success(courseList);
     }

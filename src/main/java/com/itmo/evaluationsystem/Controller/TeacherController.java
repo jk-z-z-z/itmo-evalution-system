@@ -2,7 +2,6 @@ package com.itmo.evaluationsystem.Controller;
 
 import com.itmo.evaluationsystem.Model.PageResult;
 import com.itmo.evaluationsystem.Model.dto.teacher.TeacherAddRequest;
-import com.itmo.evaluationsystem.Model.dto.teacher.TeacherListGetRequest;
 import com.itmo.evaluationsystem.Model.dto.teacher.TeacherUpdateRequest;
 import com.itmo.evaluationsystem.Model.vo.TeacherVo;
 import com.itmo.evaluationsystem.Service.TeacherService;
@@ -38,10 +37,11 @@ public class TeacherController {
      * 分页查询
      */
     @GetMapping
-    public Result getList(@RequestBody TeacherListGetRequest teacherListGetRequest) {
+    public Result getList(@RequestParam(required = false) String name, 
+                         @RequestParam(defaultValue = "1") Integer page) {
         log.info("TeacherController:Teacher:getList");
 
-        PageResult<TeacherVo> teacherList=teacherService.getList(teacherListGetRequest);
+        PageResult<TeacherVo> teacherList = teacherService.getList(name, page);
 
         return Result.success(teacherList);
     }

@@ -3,13 +3,12 @@ package com.itmo.evaluationsystem.Service.Impl;
 import com.itmo.evaluationsystem.Mapper.EvaluationMapper;
 import com.itmo.evaluationsystem.Mapper.EvaluationStudentMapper;
 import com.itmo.evaluationsystem.Model.PageResult;
-import com.itmo.evaluationsystem.Model.vo.EvaluationDetailVo;
-import com.itmo.evaluationsystem.Model.vo.StudentVo;
 import com.itmo.evaluationsystem.Model.dto.evalution.EvaluationAddCommand;
 import com.itmo.evaluationsystem.Model.dto.evalution.EvaluationAddRequest;
-import com.itmo.evaluationsystem.Model.dto.evalution.EvaluationListGetRequest;
 import com.itmo.evaluationsystem.Model.dto.evalution.EvaluationUpdateRequest;
+import com.itmo.evaluationsystem.Model.vo.EvaluationDetailVo;
 import com.itmo.evaluationsystem.Model.vo.EvaluationVo;
+import com.itmo.evaluationsystem.Model.vo.StudentVo;
 import com.itmo.evaluationsystem.Service.EvaluationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -53,15 +52,7 @@ public class EvaluationServiceImpl implements EvaluationService {
     private final Integer PAGE_SIZE = 10;
 
     @Override
-    public PageResult<EvaluationVo> getList(EvaluationListGetRequest evaluationListGetRequest) {
-        // 参数校验
-        if (evaluationListGetRequest == null) {
-            evaluationListGetRequest = new EvaluationListGetRequest();
-        }
-
-        String name = evaluationListGetRequest.getName();
-        Integer page = evaluationListGetRequest.getPage();
-
+    public PageResult<EvaluationVo> getList(String name, Integer page) {
         // 处理分页参数
         int currentPage = (page == null || page <= 0) ? 1 : page;
         int offset = (currentPage - 1) * PAGE_SIZE;

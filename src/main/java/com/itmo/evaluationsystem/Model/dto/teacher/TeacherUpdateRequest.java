@@ -6,7 +6,7 @@ import lombok.Data;
 public class TeacherUpdateRequest {
     private Integer id;
     private String name;
-    private String gender;
+    private Integer gender;
     private Integer age;
     private Integer positionId;
     private Integer titleId;
