@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itmo.evaluationsystem.Mapper.CourseMapper">
+
+    <!-- 查询课程列表（名称模糊查询 + 分页） -->
+    <select id="selectCourseListByName" resultType="com.itmo.evaluationsystem.Model.vo.CourseVo">
+        SELECT
+        id,
+        name,
+        English_name,
+        major,
+        teacher_id
+        FROM course
+        <where>
+            <!-- 名称模糊查询条件 -->
+            <if test="name != null and name != ''">
+                AND name LIKE CONCAT('%', #{name}, '%')
+            </if>
+        </where>
+        <!-- 分页条件 -->
+        <if test="offset != null and pageSize != null">
+            LIMIT #{offset}, #{pageSize}
+        </if>
+    </select>
+
+    <!-- 查询课程总数（基于名称搜索条件） -->
+    <select id="selectCourseCountByName" resultType="java.lang.Long">
+        SELECT COUNT(*)
+        FROM course
+        <where>
+            <!-- 与列表查询保持相同的搜索条件 -->
+            <if test="name != null and name != ''">
+                AND name LIKE CONCAT('%', #{name}, '%')
+            </if>
+
+        </where>
+    </select>
+</mapper>
