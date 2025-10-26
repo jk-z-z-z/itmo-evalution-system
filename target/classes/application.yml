@@ -2,7 +2,7 @@ spring:
   application:
     name: evalutionsystem
   datasource:
-    url: jdbc:mysql://localhost:3306/itmoevalutionsystem
+    url: jdbc:mysql://localhost:3306/itmo_evaluation_system
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
