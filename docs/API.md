@@ -4,7 +4,6 @@
 - 基础 URL：`http://localhost:8080`（可通过 `server.port` 修改）
 - 技术栈：Spring Boot 3 + MyBatis + MySQL
 - 统一响应：`Result { code, msg, data }`
-- 分页响应：`PageResult { total, records }`
 
 ## 完整性检查结论
 - 登录/认证：未实现。项目中不存在登录接口（如 `/auth/login`）、权限控制或安全配置（`SecurityFilterChain`）。
