@@ -4,7 +4,6 @@ import com.itmo.evaluationsystem.Model.PageResult;
 import com.itmo.evaluationsystem.Model.Result;
 import com.itmo.evaluationsystem.Model.dto.student.StudentAddRequest;
 import com.itmo.evaluationsystem.Model.dto.student.StudentUpdateRequest;
-import com.itmo.evaluationsystem.Model.dto.teacher.TeacherUpdateRequest;
 import com.itmo.evaluationsystem.Model.vo.StudentVo;
 import com.itmo.evaluationsystem.Service.StudentService;
 import lombok.extern.slf4j.Slf4j;

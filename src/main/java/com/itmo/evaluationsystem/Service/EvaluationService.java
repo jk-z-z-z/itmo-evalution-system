@@ -3,11 +3,8 @@ package com.itmo.evaluationsystem.Service;
 import com.itmo.evaluationsystem.Model.PageResult;
 import com.itmo.evaluationsystem.Model.dto.evalution.EvaluationAddRequest;
 import com.itmo.evaluationsystem.Model.dto.evalution.EvaluationUpdateRequest;
-import com.itmo.evaluationsystem.Model.dto.teacher.TeacherAddRequest;
-import com.itmo.evaluationsystem.Model.dto.teacher.TeacherUpdateRequest;
 import com.itmo.evaluationsystem.Model.vo.EvaluationDetailVo;
 import com.itmo.evaluationsystem.Model.vo.EvaluationVo;
-import com.itmo.evaluationsystem.Model.vo.TeacherVo;
 
 public interface EvaluationService {
     void add(EvaluationAddRequest evaluationAddRequest);

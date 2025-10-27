@@ -2,7 +2,6 @@ package com.itmo.evaluationsystem.Controller;
 
 import com.itmo.evaluationsystem.Model.PageResult;
 import com.itmo.evaluationsystem.Model.Result;
-import com.itmo.evaluationsystem.Model.vo.CourseVo;
 import com.itmo.evaluationsystem.Model.vo.teacherScoreDetailVo;
 import com.itmo.evaluationsystem.Service.ScoreService;
 import lombok.extern.slf4j.Slf4j;

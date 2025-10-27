@@ -12,8 +12,8 @@ public interface EvaluationStudentMapper {
      * 为所有学生创建指定测评的记录，初始 is_evaluate=0
      */
     @Insert("INSERT INTO evaluation_student (student_id, evaluation_id, is_evaluate) " +
-            "SELECT id, #{evaluationId}, 0 FROM student")
-    void insertForAllStudents(@Param("evaluationId") Integer evaluationId);
+            "SELECT  #{evaluationId}, 0 FROM student")
+    void insertForAllStudents(Integer evaluationId);
 
     /** 统计已评人数 */
     @Select("SELECT COUNT(*) FROM evaluation_student WHERE evaluation_id=#{evaluationId} AND is_evaluate=1")

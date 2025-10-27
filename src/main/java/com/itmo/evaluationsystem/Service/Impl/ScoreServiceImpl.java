@@ -5,9 +5,7 @@ import com.itmo.evaluationsystem.Mapper.ScoresMapper;
 import com.itmo.evaluationsystem.Mapper.TeacherMapper;
 import com.itmo.evaluationsystem.Model.PageResult;
 import com.itmo.evaluationsystem.Model.vo.teacherScoreDetailVo;
-import com.itmo.evaluationsystem.Service.EvaluationService;
 import com.itmo.evaluationsystem.Service.ScoreService;
-import com.itmo.evaluationsystem.Service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
