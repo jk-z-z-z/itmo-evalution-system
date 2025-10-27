@@ -6,6 +6,7 @@ import com.itmo.evaluationsystem.Model.dto.teacher.TeacherUpdateRequest;
 import com.itmo.evaluationsystem.Model.vo.TeacherVo;
 import org.apache.ibatis.annotations.*;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Mapper
@@ -51,4 +52,22 @@ public interface TeacherMapper {
 
     @Select("select name from teacher where party=#{party}")
     List<String> getListByParty(Integer party);
+
+    @Select("select count(*) from teacher where party=#{party} and gender=#{gender}")
+    Long getNumByPartyAndGender(Integer party, Integer gender);
+
+    @Select("select count(*) from teacher where party=#{party} and title_id=#{title}")
+    Long getNumByPartyAndTitle(Integer party, Integer title);
+
+    @Select("select id from teacher where party=#{party}")
+    List<Integer> getIdListByParty(Integer party);
+
+    @Select("select name from teacher where id=#{teacherId}")
+    String getNameById(Integer teacherId);
+
+    @Select("select id from teacher where party=#{party} LIMIT #{offset}, #{pageSize}")
+    List<Integer> getPageIdListByParty(Integer party, Integer offset, Integer pageSize);
+
+    @Select("select count(*) from teacher where party=#{party}")
+    Long selectTeacherCountByParty(Integer party);
 }

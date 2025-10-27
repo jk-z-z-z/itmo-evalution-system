@@ -33,4 +33,12 @@ public interface EvaluationMapper {
 
     @Delete("delete from evaluation where id=#{id}")
     void delete(Integer id);
+
+    @Select("select  id from evaluation")
+    List<Integer> getIdList();
+
+    @Select("select name from evaluation where id=#{evaluationId}")
+    String getNameById(Integer evaluationId);
+
+    List<Integer> getIdLidtByParty(Integer party);
 }

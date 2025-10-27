@@ -20,4 +20,10 @@ public interface EvaluationSystemHeadMapper {
 
     @Update("update evaluation_system_head set head_name=#{headName},proportion=#{proportion} where id=#{id}")
     void update(EvaluationSystemHeadUpdateRequest request);
+
+    @Select("select id from evaluation_system_head where party=#{party}")
+    List<Integer> getHeadIdByParty(Integer party);
+
+    @Select("select head_name from evaluation_system_head where id=#{id}")
+    String getNameById(Integer id);
 }
