@@ -22,13 +22,12 @@ public class EvaluationSystemController {
     @GetMapping
     public Result getByParty(Integer party){
         log.info("getByParty");
-
         List<EvaluationSystemHeadVo> data=evaluationSystemService.get(party);
 
         return Result.success(data);
     }
     @PostMapping("/edit")
-    public Result add(EvaluationSystemAddRequest request){
+    public Result add(@RequestBody EvaluationSystemAddRequest request){
         log.info("add");
 
         evaluationSystemService.add(request);

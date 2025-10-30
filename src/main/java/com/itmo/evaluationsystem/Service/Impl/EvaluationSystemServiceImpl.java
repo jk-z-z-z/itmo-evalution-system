@@ -9,8 +9,10 @@ import com.itmo.evaluationsystem.Model.dto.evaluationsystem.EvaluationSystemBody
 import com.itmo.evaluationsystem.Model.dto.evaluationsystem.EvaluationSystemHeadUpdateRequest;
 import com.itmo.evaluationsystem.Model.vo.EvaluationSystemHeadVo;
 import com.itmo.evaluationsystem.Service.EvaluationSystemService;
+import org.apache.ibatis.annotations.Options;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,13 +36,15 @@ public class EvaluationSystemServiceImpl implements EvaluationSystemService {
             headVo.setProportion(head.getProportion());
             headVo.setParty(head.getParty());
             headVo.setEvaluationSystemBodyVoList(evaluationSystemBodyMapper.getBodyList(head.getId()));
+            headVoList.add(headVo);
         }
 
         return headVoList;
     }
 
     @Override
-    public void add(EvaluationSystemAddRequest request) {
+    @Options(useGeneratedKeys = true,keyProperty = "id")
+    public void add(@RequestBody EvaluationSystemAddRequest request) {
 
         EvaluationSystemHead head=new EvaluationSystemHead();
         head.setHeadName(request.getHeadName());
@@ -49,6 +53,7 @@ public class EvaluationSystemServiceImpl implements EvaluationSystemService {
         evaluationSystemHeadMapper.add(head);
 
         for(EvaluationSystemBody body:request.getEvaluationSystemBodyList()){
+            body.setHeadId(head.getId());
             evaluationSystemBodyMapper.add(body);
         }
 

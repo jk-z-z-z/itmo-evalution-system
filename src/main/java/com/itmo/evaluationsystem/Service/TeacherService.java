@@ -10,7 +10,7 @@ public interface TeacherService {
 
     void add(TeacherAddRequest teacherAddRequest);
 
-    PageResult<TeacherVo> getList(String name, Integer page);
+    PageResult getList(String name, Integer page);
 
     TeacherVo getById(Integer id);
 

@@ -9,7 +9,7 @@ import com.itmo.evaluationsystem.Model.vo.CourseVo;
 public interface CourseService {
     void add(CourseAddRequest courseAddRequest);
 
-    PageResult<CourseVo> getList(String name, Integer page);
+    PageResult getList(String name, Integer page);
 
     CourseVo getById(Integer id);
 

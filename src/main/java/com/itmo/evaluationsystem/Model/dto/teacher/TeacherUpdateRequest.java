@@ -10,6 +10,6 @@ public class TeacherUpdateRequest {
     private Integer age;
     private Integer positionId;
     private Integer titleId;
-    private String major;
+    private Integer major;
     private String email;
 }

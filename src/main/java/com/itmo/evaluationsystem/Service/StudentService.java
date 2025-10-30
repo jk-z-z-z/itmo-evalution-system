@@ -9,7 +9,7 @@ public interface StudentService {
 
     void add(StudentAddRequest studentAddRequest);
 
-    PageResult<StudentVo> getList(String name, Integer page);
+    PageResult getList(String name, Integer page);
 
     StudentVo getById(Integer id);
 

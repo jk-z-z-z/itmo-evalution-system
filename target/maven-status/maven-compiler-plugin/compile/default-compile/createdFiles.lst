@@ -48,7 +48,6 @@ com\itmo\evaluationsystem\Controller\OpinionController.class
 com\itmo\evaluationsystem\Model\dto\auth\LoginRequest.class
 com\itmo\evaluationsystem\Mapper\EvaluationStudentMapper.class
 com\itmo\evaluationsystem\Controller\EvaluationSystemController.class
-com\itmo\evaluationsystem\Model\ResultCode.class
 com\itmo\evaluationsystem\Model\dto\teacher\TeacherUpdateRequest.class
 com\itmo\evaluationsystem\Config\WebConfig.class
 com\itmo\evaluationsystem\Model\dto\evalution\EvaluationAddCommand.class

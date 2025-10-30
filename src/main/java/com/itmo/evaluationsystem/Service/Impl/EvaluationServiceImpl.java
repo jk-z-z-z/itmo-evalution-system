@@ -52,7 +52,7 @@ public class EvaluationServiceImpl implements EvaluationService {
     private final Integer PAGE_SIZE = 10;
 
     @Override
-    public PageResult<EvaluationVo> getList(String name, Integer page) {
+    public PageResult getList(String name, Integer page) {
         // 处理分页参数
         int currentPage = (page == null || page <= 0) ? 1 : page;
         int offset = (currentPage - 1) * PAGE_SIZE;
@@ -66,7 +66,7 @@ public class EvaluationServiceImpl implements EvaluationService {
         // 计算总页数
         int totalPages = (int) Math.ceil((double) totalCount / PAGE_SIZE);
 
-        return new PageResult<>(evaluationList, totalCount, currentPage, PAGE_SIZE, totalPages);
+        return new PageResult(evaluationList, totalCount, currentPage, PAGE_SIZE, totalPages);
     }
 
     @Override

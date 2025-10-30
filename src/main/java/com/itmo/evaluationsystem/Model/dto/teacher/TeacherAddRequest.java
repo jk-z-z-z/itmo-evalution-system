@@ -8,10 +8,10 @@ import lombok.Data;
 
 public class TeacherAddRequest {
     private String name;
-    private String gender;
+    private Integer gender;
     private Integer age;
     private Integer positionId;
     private Integer titleId;
-    private String major;
+    private Integer major;
     private String email;
 }

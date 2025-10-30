@@ -27,7 +27,7 @@ public class TeacherServiceImpl implements TeacherService {
     private final Integer PAGE_SIZE = 10;
 
     @Override
-    public PageResult<TeacherVo> getList(String name, Integer page) {
+    public PageResult getList(String name, Integer page) {
         // 处理分页参数
         int currentPage = (page == null || page <= 0) ? 1 : page;
         int offset = (currentPage - 1) * PAGE_SIZE;
@@ -41,7 +41,7 @@ public class TeacherServiceImpl implements TeacherService {
         // 计算总页数
         int totalPages = (int) Math.ceil((double) totalCount / PAGE_SIZE);
 
-        return new PageResult<>(teacherList, totalCount, currentPage, PAGE_SIZE, totalPages);
+        return new PageResult(teacherList, totalCount, currentPage, PAGE_SIZE, totalPages);
     }
 
     @Override

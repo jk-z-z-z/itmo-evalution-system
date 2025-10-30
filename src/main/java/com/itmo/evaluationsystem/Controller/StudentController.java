@@ -40,7 +40,7 @@ public class StudentController {
                          @RequestParam(defaultValue = "1") Integer page) {
         log.info("StudentController:Student:getList");
 
-        PageResult<StudentVo> studentList = studentService.getList(name, page);
+        PageResult studentList = studentService.getList(name, page);
 
         return Result.success(studentList);
     }

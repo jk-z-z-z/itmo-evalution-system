@@ -41,7 +41,7 @@ public class TeacherController {
                          @RequestParam(defaultValue = "1") Integer page) {
         log.info("TeacherController:Teacher:getList");
 
-        PageResult<TeacherVo> teacherList = teacherService.getList(name, page);
+        PageResult teacherList = teacherService.getList(name, page);
 
         return Result.success(teacherList);
     }

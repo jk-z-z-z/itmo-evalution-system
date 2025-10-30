@@ -9,7 +9,7 @@ import com.itmo.evaluationsystem.Model.vo.EvaluationVo;
 public interface EvaluationService {
     void add(EvaluationAddRequest evaluationAddRequest);
 
-    PageResult<EvaluationVo> getList(String name, Integer page);
+    PageResult getList(String name, Integer page);
 
     EvaluationVo getById(Integer id);
 

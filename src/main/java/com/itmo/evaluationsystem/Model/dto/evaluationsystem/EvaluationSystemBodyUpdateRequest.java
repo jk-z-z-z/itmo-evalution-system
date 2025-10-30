@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class EvaluationSystemBodyUpdateRequest {
     private Integer id;
-    private String bodyId;
+    private String bodyName;
 
 }

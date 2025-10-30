@@ -28,9 +28,9 @@ public class ScoreController {
     public Result getList(@RequestParam(defaultValue = "1") Integer evaluationId,
                           @RequestParam(defaultValue = "1") Integer page,
                           @RequestParam(defaultValue ="1")Integer party) {
-        log.info("CourseController:Course:getList");
+        log.info("getList");
 
-        PageResult<List<teacherScoreDetailVo>> scoresListPageResult=scoreService.getList(evaluationId,page,party);
+        PageResult scoresListPageResult=scoreService.getList(evaluationId,page,party);
 
 
         return Result.success(scoresListPageResult);

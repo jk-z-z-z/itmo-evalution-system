@@ -39,6 +39,4 @@ public interface EvaluationMapper {
 
     @Select("select name from evaluation where id=#{evaluationId}")
     String getNameById(Integer evaluationId);
-
-    List<Integer> getIdLidtByParty(Integer party);
 }

@@ -46,7 +46,7 @@ public class ChartServiceImpl implements ChartService {
         Long chinaWomenTeacherNum=teacherMapper.getNumByPartyAndGender(0,0);
         chinaGenderTeacherNumMap.put("男",chinaMenTeacherNum);
         chinaGenderTeacherNumMap.put("女",chinaWomenTeacherNum);
-        chartBasicInfoVo.setChinaTeacherTitleInfo(chinaGenderTeacherNumMap);
+        chartBasicInfoVo.setChinaTeacherGenderInfo(chinaGenderTeacherNumMap);
 
         HashMap<String,Long> russiaTitleTeacherNumMap = new HashMap<>();
         Long russiaProfessorNum=teacherMapper.getNumByPartyAndTitle(1,0);

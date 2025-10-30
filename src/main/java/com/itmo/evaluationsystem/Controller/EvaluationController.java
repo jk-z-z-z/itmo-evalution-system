@@ -40,7 +40,7 @@ public class EvaluationController {
                          @RequestParam(defaultValue = "1") Integer page) {
         log.info("EvaluationController:Evaluation:getList");
 
-        PageResult<EvaluationVo> evaluationList = evaluationService.getList(name, page);
+        PageResult evaluationList = evaluationService.getList(name, page);
 
         return Result.success(evaluationList);
     }

@@ -29,7 +29,7 @@ public class ScoreServiceImpl implements ScoreService {
 
 
     @Override
-    public PageResult<List<teacherScoreDetailVo>> getList(Integer evaluationId, Integer page, Integer party) {
+    public PageResult getList(Integer evaluationId, Integer page, Integer party) {
         // 处理分页参数
         int currentPage = (page == null || page <= 0) ? 1 : page;
         int offset = (currentPage - 1) * PAGE_SIZE;
@@ -59,6 +59,6 @@ public class ScoreServiceImpl implements ScoreService {
         // 计算总页数
         int totalPages = (int) Math.ceil((double) totalCount / PAGE_SIZE);
 
-        return new PageResult<>(totalTeacherList, totalCount, currentPage, PAGE_SIZE, totalPages);
+        return new PageResult(totalTeacherList, totalCount, currentPage, PAGE_SIZE, totalPages);
     }
 }

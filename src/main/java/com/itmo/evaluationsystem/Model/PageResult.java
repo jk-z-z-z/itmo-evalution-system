@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class PageResult<T> {
+public class PageResult {
     private Object data;
     private Long totalCount;
     private Integer currentPage;

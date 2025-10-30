@@ -39,7 +39,7 @@ public class CourseController {
                          @RequestParam(defaultValue = "1") Integer page) {
         log.info("CourseController:Course:getList");
 
-        PageResult<CourseVo> courseList = courseService.getList(name, page);
+        PageResult courseList = courseService.getList(name, page);
 
         return Result.success(courseList);
     }
@@ -51,7 +51,7 @@ public class CourseController {
      */
     @GetMapping("/edit/{id}")
     public Result getById(@PathVariable Integer id) {
-        log.info("StudentController:Student:getById");
+        log.info("CourseController:Course:getById");
 
         CourseVo courseVo =courseService.getById(id);
 
