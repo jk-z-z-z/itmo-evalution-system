@@ -53,7 +53,7 @@ public class EvaluationSystemController {
 
     }
     @PutMapping("/edit/head")
-    public Result updateHead(EvaluationSystemHeadUpdateRequest request){
+    public Result updateHead(@RequestBody EvaluationSystemHeadUpdateRequest request){
         log.info("updateHead");
 
         evaluationSystemService.updateHead(request);
@@ -61,7 +61,7 @@ public class EvaluationSystemController {
         return Result.success();
     }
     @PutMapping("/edit/body")
-    public Result updateBody(EvaluationSystemBodyUpdateRequest request){
+    public Result updateBody(@RequestBody EvaluationSystemBodyUpdateRequest request){
         log.info("updateBody");
 
         evaluationSystemService.updateBody(request);
