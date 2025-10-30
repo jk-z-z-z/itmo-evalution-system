@@ -48,6 +48,35 @@ public class LoginServiceImpl implements LoginService {
     }
 
     @Override
+    public LoginInfo register(LoginRequest loginRequest) {
+        // 用户名唯一校验
+        Admin exist = adminMapper.selectByUsername(loginRequest.getUsername());
+        if (exist != null) {
+            return null;
+        }
+
+        // 生成BCrypt密码散列并插入
+        Admin admin = new Admin();
+        admin.setUsername(loginRequest.getUsername());
+        admin.setPassword(passwordCryptoUtil.encode(loginRequest.getPassword()));
+        admin.setRole(0); // 默认角色，可按需调整
+        adminMapper.insert(admin);
+
+        // 生成token并返回登录信息
+        java.util.HashMap<String, Object> map = new java.util.HashMap<>();
+        map.put("id", admin.getId());
+        map.put("username", admin.getUsername());
+        String token = JwtUtils.generateJwt(map);
+
+        LoginInfo loginInfo = new LoginInfo();
+        loginInfo.setId(admin.getId());
+        loginInfo.setUsername(admin.getUsername());
+        loginInfo.setRole(admin.getRole());
+        loginInfo.setToken(token);
+        return loginInfo;
+    }
+
+    @Override
     public String encodePassword(String raw) {
         return passwordCryptoUtil.encode(raw);
     }

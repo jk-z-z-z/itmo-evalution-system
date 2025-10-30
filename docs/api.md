@@ -40,6 +40,35 @@
 { "code": 0, "msg": "error", "data": null }
 ```
 
+### 注册
+- 方法与路径：`POST /login/register`
+- 描述：注册管理员账号，成功后返回登录信息与 `token`（自动登录）。
+- 请求头：无需 `token`
+- 请求体：
+```json
+{
+  "username": "admin2",
+  "password": "123456"
+}
+```
+- 成功响应：
+```json
+{
+  "code": 1,
+  "msg": "success",
+  "data": {
+    "id": 2,
+    "username": "admin2",
+    "role": 0,
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+  }
+}
+```
+- 失败响应（示例）：
+```json
+{ "code": 0, "msg": "用户名已存在", "data": null }
+```
+
 ### 密码散列生成
 - 方法与路径：`POST /login/encode`
 - 描述：生成密码的不可逆散列（注册或调试用）。

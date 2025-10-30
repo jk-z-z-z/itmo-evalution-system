@@ -2,7 +2,9 @@ package com.itmo.evaluationSystem.mapper;
 
 import com.itmo.evaluationSystem.model.entity.Admin;
 import com.itmo.evaluationSystem.model.dto.auth.LoginRequest;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 
 @Mapper
@@ -15,4 +17,8 @@ public interface AdminMapper {
     @Select("select id,username,password,role,address_IP,address_name,name " +
             "from admin where username=#{username}")
     Admin selectByUsername(String username);
+
+    @Insert("insert into admin(username,password,role) values(#{username},#{password},#{role})")
+    @Options(useGeneratedKeys = true, keyProperty = "id")
+    void insert(Admin admin);
 }

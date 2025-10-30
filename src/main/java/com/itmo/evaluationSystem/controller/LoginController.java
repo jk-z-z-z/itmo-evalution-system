@@ -26,6 +26,21 @@ public class LoginController {
         return Result.error();
     }
 
+    // 注册：创建管理员并返回登录信息（自动登录）
+    @PostMapping("/register")
+    public Result register(@RequestBody LoginRequest loginRequest) {
+        log.info("Register Request");
+        if (loginRequest.getUsername() == null || loginRequest.getUsername().isEmpty() ||
+                loginRequest.getPassword() == null || loginRequest.getPassword().isEmpty()) {
+            return Result.error("用户名或密码不能为空");
+        }
+        LoginInfo loginInfo = loginService.register(loginRequest);
+        if (loginInfo != null) {
+            return Result.success(loginInfo);
+        }
+        return Result.error("用户名已存在");
+    }
+
     // 密码哈希生成（用于注册或调试）
     @PostMapping("/encode")
     public Result encode(@RequestBody LoginRequest loginRequest) {
