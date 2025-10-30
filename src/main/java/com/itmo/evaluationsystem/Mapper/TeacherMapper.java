@@ -6,7 +6,6 @@ import com.itmo.evaluationsystem.Model.dto.teacher.TeacherUpdateRequest;
 import com.itmo.evaluationsystem.Model.vo.TeacherVo;
 import org.apache.ibatis.annotations.*;
 
-import java.util.HashMap;
 import java.util.List;
 
 @Mapper

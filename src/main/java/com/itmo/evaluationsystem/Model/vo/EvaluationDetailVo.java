@@ -1,6 +1,5 @@
 package com.itmo.evaluationsystem.Model.vo;
 
-import com.itmo.evaluationsystem.Model.dto.evalution.EvaluationAddRequest;
 import lombok.Data;
 
 import java.util.List;

@@ -10,6 +10,3 @@ mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true
-security:
-  password:
-    strength: 10
