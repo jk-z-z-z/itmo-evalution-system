@@ -1,14 +1,16 @@
 package com.itmo.evaluationsystem.Model.vo;
 
+import com.itmo.evaluationsystem.Model.dto.evalution.EvaluationAddRequest;
 import lombok.Data;
+
 import java.util.List;
 
 @Data
 public class EvaluationDetailVo {
     private EvaluationVo evaluation;
-    private Long totalCount;
-    private Long evaluatedCount;
-    private Long pendingCount;
     private List<StudentVo> evaluatedStudents;
     private List<StudentVo> pendingStudents;
+    private Long evaluatedCount;
+    private Long pendingCount;
+    private Long totalCount;
 }

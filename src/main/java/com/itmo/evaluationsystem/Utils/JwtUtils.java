@@ -1,8 +1,6 @@
 package com.itmo.evaluationsystem.Utils;
 
 import io.jsonwebtoken.*;
-
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.Map;
 
@@ -21,8 +19,8 @@ public class JwtUtils {
     }
 
 
-    public static Claims parseJwt(String token) throws ExpiredJwtException{
-        return Jwts.parser()
+    public static void parseJwt(String token) throws ExpiredJwtException{
+        Jwts.parser()
                 .setSigningKey(SECRET)
                 .parseClaimsJws(token)
                 .getBody();
