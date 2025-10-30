@@ -8,7 +8,7 @@ C:\Users\31026\Desktop\javaweb\evaluation\evaluationSystem\src\main\java\com\itm
 C:\Users\31026\Desktop\javaweb\evaluation\evaluationSystem\src\main\java\com\itmo\evaluationSystem\controller\ScoreController.java
 C:\Users\31026\Desktop\javaweb\evaluation\evaluationSystem\src\main\java\com\itmo\evaluationSystem\controller\StudentController.java
 C:\Users\31026\Desktop\javaweb\evaluation\evaluationSystem\src\main\java\com\itmo\evaluationSystem\controller\TeacherController.java
-C:\Users\31026\Desktop\javaweb\evaluation\evaluationSystem\src\main\java\com\itmo\evaluationSystem\EvaluationsystemApplication.java
+C:\Users\31026\Desktop\javaweb\evaluation\evaluationSystem\src\main\java\com\itmo\evaluationSystem\evaluationSystemApplication.java
 C:\Users\31026\Desktop\javaweb\evaluation\evaluationSystem\src\main\java\com\itmo\evaluationSystem\exception\GlobalExceptionHandler.java
 C:\Users\31026\Desktop\javaweb\evaluation\evaluationSystem\src\main\java\com\itmo\evaluationSystem\interceptor\TokenInterceptor.java
 C:\Users\31026\Desktop\javaweb\evaluation\evaluationSystem\src\main\java\com\itmo\evaluationSystem\mapper\AdminMapper.java

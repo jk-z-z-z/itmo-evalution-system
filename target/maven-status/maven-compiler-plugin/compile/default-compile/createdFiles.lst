@@ -33,6 +33,7 @@ com\itmo\evaluationSystem\mapper\TeacherMapper.class
 com\itmo\evaluationSystem\model\dto\student\StudentAddRequest.class
 com\itmo\evaluationSystem\controller\TeacherController.class
 com\itmo\evaluationSystem\service\Impl\ScoreServiceImpl.class
+com\itmo\evaluationSystem\evaluationSystemApplication.class
 com\itmo\evaluationSystem\mapper\EvaluationMapper.class
 com\itmo\evaluationSystem\service\EvaluationSystemService.class
 com\itmo\evaluationSystem\model\vo\CourseVo.class
@@ -46,7 +47,6 @@ com\itmo\evaluationSystem\controller\StudentController.class
 com\itmo\evaluationSystem\mapper\OpinionMapper.class
 com\itmo\evaluationSystem\service\Impl\TeacherServiceImpl.class
 com\itmo\evaluationSystem\interceptor\TokenInterceptor.class
-com\itmo\evaluationSystem\EvaluationsystemApplication.class
 com\itmo\evaluationSystem\service\Impl\OpinionServiceImpl.class
 com\itmo\evaluationSystem\model\dto\auth\LoginRequest.class
 com\itmo\evaluationSystem\model\dto\evaluation\EvaluationUpdateRequest.class
