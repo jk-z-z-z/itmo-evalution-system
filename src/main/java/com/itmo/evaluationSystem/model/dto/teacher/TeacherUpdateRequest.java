@@ -1,0 +1,15 @@
+package com.itmo.evaluationSystem.model.dto.teacher;
+
+import lombok.Data;
+
+@Data
+public class TeacherUpdateRequest {
+    private Integer id;
+    private String name;
+    private Integer gender;
+    private Integer age;
+    private Integer positionId;
+    private Integer titleId;
+    private Integer major;
+    private String email;
+}
